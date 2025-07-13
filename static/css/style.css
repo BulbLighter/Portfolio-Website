@@ -1,4 +1,4 @@
-/* Pi (1998) - Darren Aronofsky Inspired Styles */
+/* Pi (1998) + Primer (2004) - Combined Aronofsky & Carruth Inspired Styles */
 :root {
     --primary-bg: #000000;
     --secondary-bg: #111111;
@@ -15,25 +15,36 @@
     --text-muted: #666666;
     --intensity-glow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
     --subtle-glow: 0 0 5px #ffffff;
+    
+    /* Primer-inspired muted technical colors for garage/suburban aesthetic */
+    --primer-beige: #f4f1e8;
+    --primer-brown: #8b6f47;
+    --primer-green: #7a8471;
+    --primer-blue: #6b7c8a;
+    --primer-rust: #a67c52;
+    --primer-shadow: rgba(139, 111, 71, 0.3);
+    --primer-text: #3a3a3a;
+    --primer-metal: #9a9a9a;
+    --primer-cardboard: #d4c5a9;
 }
 
-/* Light Mode Variables */
+/* Light Mode Variables - Primer's muted garage/suburban aesthetic */
 :root[data-theme="light"] {
-    --primary-bg: #f8f9fa;
-    --secondary-bg: #e9ecef;
-    --terminal-bg: #ffffff;
-    --accent-white: #000000;
-    --stark-white: #212529;
-    --number-glow: #000000;
-    --calculation-text: #495057;
-    --math-symbols: #000000;
-    --paranoid-red: #dc3545;
-    --tension-shadow: #adb5bd;
-    --text-primary: #000000;
-    --text-secondary: #495057;
-    --text-muted: #6c757d;
-    --intensity-glow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
-    --subtle-glow: 0 0 5px #000000;
+    --primary-bg: var(--primer-beige);
+    --secondary-bg: #f9f7f0;
+    --terminal-bg: var(--primer-cardboard);
+    --accent-white: var(--primer-text);
+    --stark-white: var(--primer-brown);
+    --number-glow: var(--primer-brown);
+    --calculation-text: var(--primer-text);
+    --math-symbols: var(--primer-brown);
+    --paranoid-red: var(--primer-rust);
+    --tension-shadow: var(--primer-shadow);
+    --text-primary: var(--primer-text);
+    --text-secondary: var(--primer-brown);
+    --text-muted: var(--primer-metal);
+    --intensity-glow: 0 0 8px var(--primer-brown), 0 0 16px var(--primer-brown);
+    --subtle-glow: 0 0 4px var(--primer-brown);
 }
 
 * {
@@ -986,6 +997,91 @@ body {
 
 .rust-lake-creature.moving {
     animation: rust-lake-movement 0.6s ease-in-out;
+}
+
+/* Primer-inspired technical diagrams and schematic elements */
+.primer-diagram {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: var(--primer-brown);
+    background: var(--primer-cardboard);
+    border: 1px solid var(--primer-metal);
+    padding: 8px;
+    border-radius: 2px;
+    filter: sepia(0.3) contrast(1.1);
+}
+
+.primer-diagram.show {
+    opacity: 0.4;
+}
+
+.primer-schematic {
+    position: fixed;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    width: 60px;
+    height: 40px;
+    border: 1px solid var(--primer-metal);
+    background: linear-gradient(45deg, transparent 30%, var(--primer-shadow) 30%, var(--primer-shadow) 70%, transparent 70%);
+    filter: blur(0.5px);
+}
+
+.primer-schematic.show {
+    opacity: 0.15;
+}
+
+/* Time-loop confusion effects */
+.time-loop-artifact {
+    position: fixed;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--primer-rust);
+    text-shadow: 0 0 5px var(--primer-rust);
+    animation: time-flicker 0.8s ease-in-out;
+}
+
+.time-loop-artifact.show {
+    opacity: 0.25;
+}
+
+@keyframes time-flicker {
+    0%, 100% { opacity: 0.25; }
+    20% { opacity: 0.1; }
+    40% { opacity: 0.3; }
+    60% { opacity: 0.05; }
+    80% { opacity: 0.2; }
+}
+
+/* Technical annotation overlays */
+.technical-annotation {
+    position: fixed;
+    pointer-events: none;
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+    font-family: 'Courier New', monospace;
+    font-size: 9px;
+    color: var(--primer-metal);
+    background: rgba(244, 241, 232, 0.8);
+    padding: 2px 4px;
+    border-radius: 1px;
+    border: 1px solid var(--primer-metal);
+    white-space: nowrap;
+}
+
+.technical-annotation.show {
+    opacity: 0.3;
 }
 
 @media (max-width: 480px) {

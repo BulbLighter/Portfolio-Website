@@ -1,8 +1,10 @@
-# Pi (1998) Inspired Portfolio
+# Pi (1998) + Primer (2004) Inspired Portfolio
 
 ## Overview
 
 This is a portfolio website built with Flask inspired by Darren Aronofsky's Pi (1998), showcasing Pulkit Bhardwaj's professional experience and education. The application features a stark, black-and-white design with high contrast visuals, computer science code backgrounds, and intense terminal-style aesthetics reminiscent of the film's paranoid obsession theme. Now includes dark/light mode toggle functionality.
+
+**CHECKPOINT MARKED (July 13, 2025)**: Current state with Rust Lake surveillance system saved as stable fallback position before experimenting with Pi + Primer combined theme.
 
 ## User Preferences
 

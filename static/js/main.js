@@ -330,6 +330,193 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize surveillance system
     createSurveillanceSystem();
     
+    // Primer-inspired technical diagrams and time-loop confusion
+    function createPrimerEffects() {
+        const technicalPhrases = [
+            "T = 0.247s", "φ = 1.618", "ΔE = mc²", "λ = 432Hz", 
+            "R₀ = 6.8kΩ", "C₁ = 47μF", "V_out = 3.3V", "f = 60Hz",
+            "t₁ → t₂", "loop(n+1)", "causality", "temporal", "paradox",
+            "iteration", "recursive", "bootstrap", "closed loop"
+        ];
+        
+        const schematicElements = [
+            "─┬─", "─┤├─", "○──", "──●", "╫", "╪", "┌─┐", "└─┘",
+            "→", "←", "↑", "↓", "⟲", "⟳", "∞", "△", "◯", "□"
+        ];
+        
+        const timeLoopSymbols = [
+            "⟲", "⟳", "∞", "◯", "t₁", "t₂", "t₃", "T+", "T-", "Δt",
+            "LOOP", "REPEAT", "AGAIN", "CYCLE", "RETURN", "BACK"
+        ];
+        
+        function createTechnicalDiagram() {
+            const diagram = document.createElement('div');
+            diagram.className = 'primer-diagram';
+            diagram.textContent = technicalPhrases[Math.floor(Math.random() * technicalPhrases.length)];
+            
+            // Position within current viewport
+            const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const currentViewportTop = scrollY;
+            
+            diagram.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+            diagram.style.top = (currentViewportTop + Math.random() * (viewportHeight - 50)) + 'px';
+            
+            document.body.appendChild(diagram);
+            
+            setTimeout(() => {
+                diagram.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                diagram.classList.remove('show');
+                setTimeout(() => {
+                    if (diagram.parentNode) {
+                        diagram.parentNode.removeChild(diagram);
+                    }
+                }, 500);
+            }, 2000 + Math.random() * 3000);
+        }
+        
+        function createSchematicElement() {
+            const schematic = document.createElement('div');
+            schematic.className = 'primer-schematic';
+            
+            // Add schematic symbol as text content
+            const symbol = document.createElement('div');
+            symbol.textContent = schematicElements[Math.floor(Math.random() * schematicElements.length)];
+            symbol.style.textAlign = 'center';
+            symbol.style.lineHeight = '40px';
+            symbol.style.fontSize = '12px';
+            symbol.style.color = 'var(--primer-metal)';
+            schematic.appendChild(symbol);
+            
+            // Position within current viewport
+            const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const currentViewportTop = scrollY;
+            
+            schematic.style.left = Math.random() * (window.innerWidth - 60) + 'px';
+            schematic.style.top = (currentViewportTop + Math.random() * (viewportHeight - 40)) + 'px';
+            
+            document.body.appendChild(schematic);
+            
+            setTimeout(() => {
+                schematic.classList.add('show');
+            }, 50);
+            
+            setTimeout(() => {
+                schematic.classList.remove('show');
+                setTimeout(() => {
+                    if (schematic.parentNode) {
+                        schematic.parentNode.removeChild(schematic);
+                    }
+                }, 400);
+            }, 1500 + Math.random() * 2000);
+        }
+        
+        function createTimeLoopArtifact() {
+            const artifact = document.createElement('div');
+            artifact.className = 'time-loop-artifact';
+            artifact.textContent = timeLoopSymbols[Math.floor(Math.random() * timeLoopSymbols.length)];
+            
+            // Position within current viewport
+            const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const currentViewportTop = scrollY;
+            
+            artifact.style.left = Math.random() * window.innerWidth + 'px';
+            artifact.style.top = (currentViewportTop + Math.random() * viewportHeight) + 'px';
+            
+            document.body.appendChild(artifact);
+            
+            setTimeout(() => {
+                artifact.classList.add('show');
+            }, 20);
+            
+            setTimeout(() => {
+                artifact.classList.remove('show');
+                setTimeout(() => {
+                    if (artifact.parentNode) {
+                        artifact.parentNode.removeChild(artifact);
+                    }
+                }, 200);
+            }, 800 + Math.random() * 400);
+        }
+        
+        function createTechnicalAnnotation() {
+            const annotation = document.createElement('div');
+            annotation.className = 'technical-annotation';
+            annotation.textContent = technicalPhrases[Math.floor(Math.random() * technicalPhrases.length)];
+            
+            // Position within current viewport
+            const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const currentViewportTop = scrollY;
+            
+            annotation.style.left = Math.random() * (window.innerWidth - 80) + 'px';
+            annotation.style.top = (currentViewportTop + Math.random() * (viewportHeight - 20)) + 'px';
+            
+            document.body.appendChild(annotation);
+            
+            setTimeout(() => {
+                annotation.classList.add('show');
+            }, 150);
+            
+            setTimeout(() => {
+                annotation.classList.remove('show');
+                setTimeout(() => {
+                    if (annotation.parentNode) {
+                        annotation.parentNode.removeChild(annotation);
+                    }
+                }, 300);
+            }, 1000 + Math.random() * 1500);
+        }
+        
+        function triggerPrimerEvent() {
+            const eventType = Math.random();
+            
+            if (eventType < 0.3) {
+                createTechnicalDiagram();
+            } else if (eventType < 0.6) {
+                createSchematicElement();
+            } else if (eventType < 0.8) {
+                createTimeLoopArtifact();
+            } else {
+                createTechnicalAnnotation();
+            }
+            
+            // Sometimes create multiple overlapping effects
+            if (Math.random() < 0.2) {
+                setTimeout(() => {
+                    const secondEvent = Math.random();
+                    if (secondEvent < 0.5) {
+                        createTimeLoopArtifact();
+                    } else {
+                        createTechnicalAnnotation();
+                    }
+                }, 300 + Math.random() * 500);
+            }
+        }
+        
+        // Start Primer effects system
+        function schedulePrimerEffects() {
+            const interval = 7000 + Math.random() * 18000; // 7-25 seconds
+            setTimeout(() => {
+                triggerPrimerEvent();
+                schedulePrimerEffects();
+            }, interval);
+        }
+        
+        // Initial delay before first Primer effect
+        setTimeout(() => {
+            schedulePrimerEffects();
+        }, 3000 + Math.random() * 8000);
+    }
+    
+    // Initialize Primer effects system
+    createPrimerEffects();
+    
     function startPortfolio() {
         // Cursor trail effect
         const cursorTrail = document.getElementById('cursor-trail');
