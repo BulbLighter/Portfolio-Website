@@ -99,6 +99,157 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize flicker effects
     applyFlickerEffects();
     
+    // Eerie surveillance system - creates subtle watching presences
+    function createSurveillanceSystem() {
+        const watcherSymbols = ['👁️', '👀', '•', '▪', '▫', '◦', '○', '●', '■', '□'];
+        const shadowSizes = [30, 40, 50, 60, 80];
+        const glitchSizes = [
+            { width: 1, height: 15 },
+            { width: 2, height: 20 },
+            { width: 1, height: 10 },
+            { width: 3, height: 25 }
+        ];
+        
+        function createWatcher() {
+            const watcher = document.createElement('div');
+            watcher.className = 'watcher';
+            watcher.textContent = watcherSymbols[Math.floor(Math.random() * watcherSymbols.length)];
+            
+            // Random position at viewport edges or corners
+            const edge = Math.random();
+            if (edge < 0.25) { // Top edge
+                watcher.style.left = Math.random() * window.innerWidth + 'px';
+                watcher.style.top = Math.random() * 100 + 'px';
+            } else if (edge < 0.5) { // Right edge
+                watcher.style.left = (window.innerWidth - 100) + Math.random() * 100 + 'px';
+                watcher.style.top = Math.random() * window.innerHeight + 'px';
+            } else if (edge < 0.75) { // Bottom edge
+                watcher.style.left = Math.random() * window.innerWidth + 'px';
+                watcher.style.top = (window.innerHeight - 100) + Math.random() * 100 + 'px';
+            } else { // Left edge
+                watcher.style.left = Math.random() * 100 + 'px';
+                watcher.style.top = Math.random() * window.innerHeight + 'px';
+            }
+            
+            document.body.appendChild(watcher);
+            
+            // Show briefly
+            setTimeout(() => {
+                watcher.classList.add('show');
+                watcher.classList.add('moving');
+            }, 50);
+            
+            // Hide and remove
+            setTimeout(() => {
+                watcher.classList.remove('show');
+                setTimeout(() => {
+                    if (watcher.parentNode) {
+                        watcher.parentNode.removeChild(watcher);
+                    }
+                }, 200);
+            }, 150 + Math.random() * 100);
+        }
+        
+        function createShadowPresence() {
+            const shadow = document.createElement('div');
+            shadow.className = 'shadow-presence';
+            const size = shadowSizes[Math.floor(Math.random() * shadowSizes.length)];
+            shadow.style.width = size + 'px';
+            shadow.style.height = size + 'px';
+            
+            // Random position
+            shadow.style.left = Math.random() * (window.innerWidth - size) + 'px';
+            shadow.style.top = Math.random() * (window.innerHeight - size) + 'px';
+            
+            document.body.appendChild(shadow);
+            
+            // Show briefly
+            setTimeout(() => {
+                shadow.classList.add('show');
+            }, 100);
+            
+            // Hide and remove
+            setTimeout(() => {
+                shadow.classList.remove('show');
+                setTimeout(() => {
+                    if (shadow.parentNode) {
+                        shadow.parentNode.removeChild(shadow);
+                    }
+                }, 300);
+            }, 200 + Math.random() * 150);
+        }
+        
+        function createGlitchArtifact() {
+            const glitch = document.createElement('div');
+            glitch.className = 'glitch-artifact';
+            const size = glitchSizes[Math.floor(Math.random() * glitchSizes.length)];
+            glitch.style.width = size.width + 'px';
+            glitch.style.height = size.height + 'px';
+            
+            // Random position
+            glitch.style.left = Math.random() * window.innerWidth + 'px';
+            glitch.style.top = Math.random() * window.innerHeight + 'px';
+            
+            document.body.appendChild(glitch);
+            
+            // Show very briefly
+            setTimeout(() => {
+                glitch.classList.add('show');
+            }, 20);
+            
+            // Hide and remove quickly
+            setTimeout(() => {
+                glitch.classList.remove('show');
+                setTimeout(() => {
+                    if (glitch.parentNode) {
+                        glitch.parentNode.removeChild(glitch);
+                    }
+                }, 100);
+            }, 50 + Math.random() * 50);
+        }
+        
+        function triggerSurveillanceEvent() {
+            const eventType = Math.random();
+            
+            if (eventType < 0.4) {
+                createWatcher();
+            } else if (eventType < 0.7) {
+                createShadowPresence();
+            } else {
+                createGlitchArtifact();
+            }
+            
+            // Sometimes create multiple simultaneous effects
+            if (Math.random() < 0.15) {
+                setTimeout(() => {
+                    const secondEvent = Math.random();
+                    if (secondEvent < 0.5) {
+                        createWatcher();
+                    } else {
+                        createGlitchArtifact();
+                    }
+                }, 200 + Math.random() * 300);
+            }
+        }
+        
+        // Start surveillance system with random intervals
+        function scheduleSurveillance() {
+            const interval = 8000 + Math.random() * 25000; // 8-33 seconds
+            setTimeout(() => {
+                triggerSurveillanceEvent();
+                scheduleSurveillance(); // Schedule next event
+            }, interval);
+        }
+        
+        // Initial delay before first surveillance event
+        setTimeout(() => {
+            scheduleSurveillance();
+        }, 5000 + Math.random() * 10000);
+    }
+    
+    // Initialize surveillance system
+    createSurveillanceSystem();
+    
     function startPortfolio() {
         // Cursor trail effect
         const cursorTrail = document.getElementById('cursor-trail');
