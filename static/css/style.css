@@ -964,6 +964,30 @@ body {
     animation: peripheral-movement 0.4s ease-in-out;
 }
 
+/* Rust Lake specific creature styling */
+.rust-lake-creature {
+    font-size: 22px !important;
+    filter: blur(0.3px) sepia(0.2) contrast(1.1) !important;
+    text-shadow: 0 0 12px var(--text-primary) !important;
+}
+
+.rust-lake-creature.show {
+    opacity: 0.18 !important;
+}
+
+/* Enhanced peripheral movement for creatures */
+@keyframes rust-lake-movement {
+    0% { transform: translateX(0) translateY(0) scale(1) rotate(0deg); }
+    25% { transform: translateX(2px) translateY(-1px) scale(1.03) rotate(1deg); }
+    50% { transform: translateX(-1px) translateY(2px) scale(0.97) rotate(-1deg); }
+    75% { transform: translateX(1px) translateY(-2px) scale(1.02) rotate(0.5deg); }
+    100% { transform: translateX(0) translateY(0) scale(1) rotate(0deg); }
+}
+
+.rust-lake-creature.moving {
+    animation: rust-lake-movement 0.6s ease-in-out;
+}
+
 @media (max-width: 480px) {
     .terminal-body {
         padding: 15px;

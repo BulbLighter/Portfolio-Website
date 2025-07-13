@@ -99,36 +99,58 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize flicker effects
     applyFlickerEffects();
     
-    // Eerie surveillance system - creates subtle watching presences
+    // Eerie surveillance system - Rust Lake/Cube Escape inspired creatures
     function createSurveillanceSystem() {
-        const watcherSymbols = ['👁️', '👀', '•', '▪', '▫', '◦', '○', '●', '■', '□'];
-        const shadowSizes = [30, 40, 50, 60, 80];
+        // Rust Lake inspired creatures and symbols
+        const rustLakeCreatures = ['🐦', '🦉', '🐰', '🦌', '🐀', '🕷️', '🦋', '🐛', '🪲', '🦗'];
+        const cubeEscapeSymbols = ['⬛', '⬜', '◼️', '◻️', '▪️', '▫️', '🔳', '🔲', '◾', '◽'];
+        const watcherSymbols = ['👁️', '👀', '•', '○', '●', '■', '□'];
+        const mysteriousSymbols = ['⧫', '◊', '◈', '◇', '◆', '⬟', '⬢', '⬣', '⬡', '⬠'];
+        
+        const shadowSizes = [25, 35, 45, 55, 75, 90];
         const glitchSizes = [
-            { width: 1, height: 15 },
-            { width: 2, height: 20 },
-            { width: 1, height: 10 },
-            { width: 3, height: 25 }
+            { width: 1, height: 12 },
+            { width: 2, height: 18 },
+            { width: 1, height: 8 },
+            { width: 3, height: 22 },
+            { width: 1, height: 30 }
         ];
         
         function createWatcher() {
             const watcher = document.createElement('div');
             watcher.className = 'watcher';
-            watcher.textContent = watcherSymbols[Math.floor(Math.random() * watcherSymbols.length)];
             
-            // Random position at viewport edges or corners
+            // Choose creature type based on current viewport position
+            const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const currentViewportTop = scrollY;
+            const currentViewportBottom = scrollY + viewportHeight;
+            
+            const creatureType = Math.random();
+            if (creatureType < 0.3) {
+                watcher.textContent = rustLakeCreatures[Math.floor(Math.random() * rustLakeCreatures.length)];
+            } else if (creatureType < 0.6) {
+                watcher.textContent = cubeEscapeSymbols[Math.floor(Math.random() * cubeEscapeSymbols.length)];
+            } else if (creatureType < 0.8) {
+                watcher.textContent = watcherSymbols[Math.floor(Math.random() * watcherSymbols.length)];
+            } else {
+                watcher.textContent = mysteriousSymbols[Math.floor(Math.random() * mysteriousSymbols.length)];
+            }
+            
+            // Position relative to current viewport
             const edge = Math.random();
-            if (edge < 0.25) { // Top edge
+            if (edge < 0.25) { // Top edge of current viewport
                 watcher.style.left = Math.random() * window.innerWidth + 'px';
-                watcher.style.top = Math.random() * 100 + 'px';
-            } else if (edge < 0.5) { // Right edge
+                watcher.style.top = (currentViewportTop + Math.random() * 80) + 'px';
+            } else if (edge < 0.5) { // Right edge of current viewport
                 watcher.style.left = (window.innerWidth - 100) + Math.random() * 100 + 'px';
-                watcher.style.top = Math.random() * window.innerHeight + 'px';
-            } else if (edge < 0.75) { // Bottom edge
+                watcher.style.top = (currentViewportTop + Math.random() * viewportHeight) + 'px';
+            } else if (edge < 0.75) { // Bottom edge of current viewport
                 watcher.style.left = Math.random() * window.innerWidth + 'px';
-                watcher.style.top = (window.innerHeight - 100) + Math.random() * 100 + 'px';
-            } else { // Left edge
+                watcher.style.top = (currentViewportBottom - 100 + Math.random() * 80) + 'px';
+            } else { // Left edge of current viewport
                 watcher.style.left = Math.random() * 100 + 'px';
-                watcher.style.top = Math.random() * window.innerHeight + 'px';
+                watcher.style.top = (currentViewportTop + Math.random() * viewportHeight) + 'px';
             }
             
             document.body.appendChild(watcher);
@@ -157,9 +179,13 @@ document.addEventListener('DOMContentLoaded', function() {
             shadow.style.width = size + 'px';
             shadow.style.height = size + 'px';
             
-            // Random position
+            // Position within current viewport
+            const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const currentViewportTop = scrollY;
+            
             shadow.style.left = Math.random() * (window.innerWidth - size) + 'px';
-            shadow.style.top = Math.random() * (window.innerHeight - size) + 'px';
+            shadow.style.top = (currentViewportTop + Math.random() * (viewportHeight - size)) + 'px';
             
             document.body.appendChild(shadow);
             
@@ -186,9 +212,13 @@ document.addEventListener('DOMContentLoaded', function() {
             glitch.style.width = size.width + 'px';
             glitch.style.height = size.height + 'px';
             
-            // Random position
+            // Position within current viewport
+            const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const currentViewportTop = scrollY;
+            
             glitch.style.left = Math.random() * window.innerWidth + 'px';
-            glitch.style.top = Math.random() * window.innerHeight + 'px';
+            glitch.style.top = (currentViewportTop + Math.random() * viewportHeight) + 'px';
             
             document.body.appendChild(glitch);
             
@@ -232,11 +262,61 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
+        // Enhanced surveillance with Rust Lake creatures appearing more frequently
+        function createRustLakeCreature() {
+            const creature = document.createElement('div');
+            creature.className = 'watcher rust-lake-creature';
+            creature.textContent = rustLakeCreatures[Math.floor(Math.random() * rustLakeCreatures.length)];
+            creature.style.fontSize = '22px';
+            creature.style.filter = 'blur(0.3px) sepia(0.2)';
+            
+            // Position at viewport periphery
+            const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const currentViewportTop = scrollY;
+            
+            const side = Math.random();
+            if (side < 0.3) { // Corners are more unsettling
+                creature.style.left = (Math.random() < 0.5 ? 10 : window.innerWidth - 50) + 'px';
+                creature.style.top = (currentViewportTop + (Math.random() < 0.5 ? 10 : viewportHeight - 50)) + 'px';
+            } else if (side < 0.6) { // Edges
+                creature.style.left = Math.random() * window.innerWidth + 'px';
+                creature.style.top = (currentViewportTop + (Math.random() < 0.5 ? 20 : viewportHeight - 60)) + 'px';
+            } else { // Sides
+                creature.style.left = (Math.random() < 0.5 ? 5 : window.innerWidth - 40) + 'px';
+                creature.style.top = (currentViewportTop + Math.random() * viewportHeight) + 'px';
+            }
+            
+            document.body.appendChild(creature);
+            
+            // Show with subtle movement
+            setTimeout(() => {
+                creature.classList.add('show');
+                creature.classList.add('moving');
+            }, 30);
+            
+            // Longer duration for creatures to be more noticeable
+            setTimeout(() => {
+                creature.classList.remove('show');
+                setTimeout(() => {
+                    if (creature.parentNode) {
+                        creature.parentNode.removeChild(creature);
+                    }
+                }, 250);
+            }, 250 + Math.random() * 200);
+        }
+        
         // Start surveillance system with random intervals
         function scheduleSurveillance() {
-            const interval = 8000 + Math.random() * 25000; // 8-33 seconds
+            const interval = 6000 + Math.random() * 20000; // 6-26 seconds (more frequent)
             setTimeout(() => {
-                triggerSurveillanceEvent();
+                // Higher chance of Rust Lake creatures
+                const eventChoice = Math.random();
+                if (eventChoice < 0.35) {
+                    createRustLakeCreature();
+                } else {
+                    triggerSurveillanceEvent();
+                }
                 scheduleSurveillance(); // Schedule next event
             }, interval);
         }
