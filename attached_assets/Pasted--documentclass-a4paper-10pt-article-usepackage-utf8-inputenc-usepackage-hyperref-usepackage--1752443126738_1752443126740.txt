@@ -1,0 +1,124 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in]{geometry}
+\usepackage{graphicx}
+
+% Remove unused packages
+% \usepackage{wrapfig}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+}
+
+\begin{document}
+
+\begin{center}
+    \Large{\textbf{Pulkit Bhardwaj}} \\[0.3em]
+    \small{
+        \href{mailto:pulkitb169@gmail.com}{pulkitb169@gmail.com} |
+        \href{tel:9289381062}{9289381062} |
+        \href{https://www.linkedin.com/in/pulkit-bhardwaj-507930265/}{LinkedIn} |
+        \href{https://github.com/BulbLighter}{GitHub}
+    }
+\end{center}
+
+\section*{Education}
+\textbf{Kalinga Institute of Industrial Technology, Bhubaneswar} \hfill \textit{2021 - 2025}\\
+B.Tech in Computer Science and Engineering\\
+CGPA: 7.20/10.0\\
+
+\textbf{Maxfort School, Rohini (CBSE)} \hfill \textit{2020 - 2021}\\
+Class XII - 77\%\\
+
+\textbf{Maxfort School, Rohini (CBSE)} \hfill \textit{2018 - 2019}\\
+Class X - 90\%\\
+
+\section*{Experience}
+\textbf{Inventrom Private Limited - Bolt IoT} \hfill \textit{Remote}\\
+\textit{Software Development Intern} \hfill \textit{Jan 2025 – Apr 2025}\\
+\href{https://drive.google.com/file/d/1RxXFUwHPjwE-THkI2yW2F1EzAIllXYIE/view?usp=sharing}{\textcolor{blue}{[Internship Certificate}}
+\href{https://drive.google.com/drive/folders/1Px3pcMg7sus0yPqQjrblfYemsY_f20cN?usp=sharing}{\textcolor{blue}{Training Certificate]}}
+\begin{itemize}[leftmargin=0.5cm, itemsep=0pt, topsep=0pt]
+    \item Implemented Python algorithms including FizzBuzz and a random number generator demonstrating proficiency in loops, conditional statements, and modular arithmetic
+    \item Designed and developed a responsive corporate website for Inventrom (IoT company) featuring semantic HTML5 structure, CSS flexbox layouts, and JavaScript-powered navigation highlighting
+    \item Created an interactive photo gallery with custom slider functionality using CSS transformations and JavaScript DOM manipulation for smooth transitions
+    \item Built a lead generation system by integrating third-party form handling (HubSpot) with proper validation and error handling
+    \item Applied web accessibility best practices including proper alt text, semantic HTML structure, and intuitive user interface design
+    \item Demonstrated technical skills in frontend development, responsive design, UI/UX principles, and problem-solving through multiple completed projects
+\end{itemize}
+
+\textit\\
+\textit{Artificial Intelligence (AI) \& Internet of Things (IoT) Developer Intern} \hfill \textit{Aug 2024 – Dec 2024}\\
+\href{https://drive.google.com/file/d/1l2xGd-37ohmcfhc-Q_F7X0BWx5Uw3Eva/view?usp=sharing}{\textcolor{blue}{[Internship Certificate}}
+\href{https://drive.google.com/drive/folders/17WnB0DUf1KN2T36H4VrMecjgHQ9bssHA?usp=sharing}{\textcolor{blue}{Training Certificate]}}
+\begin{itemize}[leftmargin=0.5cm, itemsep=0pt, topsep=0pt]
+    \item Gained comprehensive knowledge of AI fundamentals and generative AI applications while developing core Python programming skills through practical exercises for AI model interactions
+    \item Acquired technical proficiency in working with WIFI-enabled microcontroller modules, including GPIO, ADC, and various communication protocols for IoT applications
+    \item Developed IoT projects including a temperature monitoring system with industry safety alerts featuring polynomial regression for trend prediction and multi-channel alert system using Twilio SMS and Mailgun
+    \item Created a light intensity monitoring system utilizing LDR sensors with Z-score based statistical anomaly detection for identifying sudden lighting changes with real-time visualization
+    \item Implemented AI applications including a GPT-3.5 powered course content generator with asynchronous processing and a health advisory Telegram bot with multi-threaded architecture
+    \item Enhanced web development skills through HTML/CSS practice and utilized platforms like Replit.com for coding experience and building responsive user interfaces
+\end{itemize}
+
+\section*{Skills}
+\begin{itemize}[leftmargin=0.5cm, itemsep=0pt, topsep=0pt]
+    \item \textbf{Programming:} Python, JavaScript, C/C++, HTML/CSS, SQL
+    \item \textbf{Frameworks \& Tools:} Flask, Node.js, Replit, Git/Github
+    \item \textbf{Development \& Hardware:} API Integration, Sensor Integration, Microcontrollers
+\end{itemize}
+
+\section*{Projects}
+\textbf{\href{https://drive.google.com/drive/folders/1WFiUt9irN8Yi1rZ7Hmc_6t4dRK5M9JYr?usp=sharing}{AI Course Content Generator}} \hfill \textit{2024}
+\begin{itemize}[leftmargin=0.5cm, itemsep=0pt, topsep=0pt]
+    \item Technologies: Python, Flask, OpenAI GPT-3.5 API, Bootstrap, JavaScript, HTML/CSS
+    \item Engineered a web application that leverages OpenAI's GPT-3.5 model to generate comprehensive course outlines with learning objectives, syllabi, and assessment methods
+    \item Implemented asynchronous content generation with loading states, error handling, and clipboard functionality
+    \item Designed a responsive UI with Bootstrap featuring real-time content generation feedback and structured educational outputs aligned with Bloom's Taxonomy
+    \item Developed secure API integration with environment variable handling for OpenAI credentials
+\end{itemize}
+\textit\\
+\textbf{\href{https://drive.google.com/drive/folders/1CdDdeMxwIiZ0EAwPgRC4B_1TB2MSvAxt?usp=sharing}{Temperature Monitor with Industry Safety Alert}} \hfill \textit{2024}
+\begin{itemize}[leftmargin=0.5cm, itemsep=0pt, topsep=0pt]
+    \item Technologies: JavaScript, Python, Bolt Cloud Platform, Twilio API, Mailgun API, WSL (Windows Subsystem for Linux)
+    \item Hardware: Bolt Microcontroller, LM35 Temperature Sensor, Piezo-Buzzer, Breadboard, Jumper Wires
+    \item Implemented polynomial regression algorithm for temperature trend prediction and forecasting with configurable parameters
+    \item Designed a multi-channel alert system using Twilio SMS and Mailgun email services when temperature exceeds preset thresholds
+    \item Developed interactive dashboard for real-time monitoring with dynamic graph visualization and trend analysis
+    \item Created a safety alert mechanism with remote-controlled buzzer activation for immediate on-site notifications
+\end{itemize}
+\textit\\
+\textbf{\href{https://drive.google.com/drive/folders/1XctVwKy7ObvkELfznu_ZURN9jtFT95eD?usp=sharing}{Light Intensity Monitoring System}} \hfill \textit{2024}
+\begin{itemize}[leftmargin=0.5cm, itemsep=0pt, topsep=0pt]
+    \item Technologies: JavaScript, Python, Bolt Cloud Platform, Twilio API, WSL (Windows Subsystem for Linux)
+    \item Hardware: Bolt Microcontroller, Light Dependent Resistor (LDR), 10K Ohm Resistor
+    \item Designed a voltage divider circuit utilizing LDR's variable resistance property to measure ambient light intensity
+    \item Implemented Z-score based statistical anomaly detection algorithm for identifying sudden changes in lighting conditions
+    \item Developed a system that processes analog sensor data through ADC (Analog-to-Digital Conversion) with real-time visualization
+    \item Created an automated alert system that sends SMS notifications when lighting conditions change unexpectedly
+\end{itemize}
+\textit\\
+\textbf{\href{https://drive.google.com/drive/folders/1MSk-ypEX4vbuQV1RfMBeVDkDWJqFlNkt?usp=sharing}{Personal Health Assistant Bot}} \hfill \textit{2024}
+\begin{itemize}[leftmargin=0.5cm, itemsep=0pt, topsep=0pt]
+    \item Technologies: Python, Flask, OpenAI GPT-3.5 API, aiogram, Threading
+    \item Developed a Telegram-based AI-powered health assistant with multi-platform support using aiogram framework
+    \item Implemented multi-threaded architecture with concurrent Flask server for monitoring and asynchronous message processing
+    \item Created specialized health guidance system with medical safety protocols and automated disclaimers
+    \item Designed intuitive command structure with welcome messages and topic-specific guidance categories
+\end{itemize}
+
+\section*{Achievements and Certifications}
+\begin{itemize}[leftmargin=0.5cm, itemsep=0pt, topsep=0pt]
+    \item Attended KES Konnect 2.0 - 2022 [\href{https://drive.google.com/file/d/1dFRlvhou-cHglTjjqPB_uWhuhmdi6xfj/view?usp=sharing}{Certificate}]
+    \item Organizing Team Member, KIIT Launchpad 2022 by Qutopia [\href{https://drive.google.com/file/d/1VUquKTD0_wN8wVWN_oEa_pIS2yPu-bfC/view?usp=sharing}{Certificate}]
+    \item Organizing Team Member, KIIT-Karnival Lore 2023 by Wordsmith
+    \item Completed "Legend of Python" course by Codedex [\href{https://www.codedex.io/certificates/a224b0de-e3b1-457a-9d80-54f346ba5a90}{Certificate}]
+    \item Participated in the Hackathon - Capture the Flag, 2023 by KPMG 
+    [\href{https://drive.google.com/file/d/1rzbCyj1t4d1DM2gjB7ZTudBmfstf6k-Q/view?usp=sharing}{Certificate}]
+\end{itemize}
+
+\end{document}
