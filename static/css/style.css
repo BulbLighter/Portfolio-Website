@@ -17,6 +17,25 @@
     --subtle-glow: 0 0 5px #ffffff;
 }
 
+/* Light Mode Variables */
+:root[data-theme="light"] {
+    --primary-bg: #f8f9fa;
+    --secondary-bg: #e9ecef;
+    --terminal-bg: #ffffff;
+    --accent-white: #000000;
+    --stark-white: #212529;
+    --number-glow: #000000;
+    --calculation-text: #495057;
+    --math-symbols: #000000;
+    --paranoid-red: #dc3545;
+    --tension-shadow: #adb5bd;
+    --text-primary: #000000;
+    --text-secondary: #495057;
+    --text-muted: #6c757d;
+    --intensity-glow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
+    --subtle-glow: 0 0 5px #000000;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -172,6 +191,27 @@ body {
 .nav-links {
     display: flex;
     gap: 30px;
+    align-items: center;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--accent-white);
+    color: var(--accent-white);
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+}
+
+.theme-toggle:hover {
+    background: var(--accent-white);
+    color: var(--primary-bg);
+    box-shadow: var(--subtle-glow);
 }
 
 .nav-link {
@@ -724,7 +764,7 @@ body {
 }
 
 .contact-method a:hover {
-    color: var(--neon-green);
+    color: var(--accent-white);
 }
 
 /* Responsive Design */
@@ -732,6 +772,34 @@ body {
     .nav-links {
         display: none;
     }
+    
+    .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .mobile-theme-toggle {
+        display: block;
+        margin-left: 0;
+        font-size: 0.8em;
+        padding: 6px 10px;
+    }
+    
+    .desktop-theme-toggle {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-theme-toggle {
+        display: none;
+    }
+    
+    .desktop-theme-toggle {
+        display: block;
+    }
+}
     
     .hero-name {
         font-size: 2em;

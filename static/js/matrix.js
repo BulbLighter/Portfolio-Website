@@ -5,26 +5,26 @@ class MathematicalBackground {
         this.ctx = this.canvas.getContext('2d');
         this.fontSize = 12;
         this.equations = [
-            'π = 3.14159265358979323846...',
-            'e^(iπ) + 1 = 0',
-            'Σ(n=1 to ∞) 1/n² = π²/6',
-            '∫₀^∞ e^(-x²) dx = √π/2',
-            'φ = (1 + √5)/2 ≈ 1.618',
-            'sin²(x) + cos²(x) = 1',
-            'lim(n→∞) (1 + 1/n)^n = e',
-            'f(x) = x² + bx + c',
-            'dy/dx = lim(h→0) [f(x+h) - f(x)]/h',
-            'P(A∩B) = P(A) × P(B|A)',
-            '∇²φ = ∂²φ/∂x² + ∂²φ/∂y²',
-            'λ = h/p = h/mv',
-            'E = mc²',
-            'F = ma',
-            'a² + b² = c²',
-            'log₂(n) = log(n)/log(2)',
-            'Σ(k=0 to n) C(n,k) = 2^n',
-            'det(A) = ad - bc',
-            'tr(A) = a₁₁ + a₂₂ + ... + aₙₙ',
-            'rank(A) ≤ min(m,n)'
+            'def fibonacci(n): return n if n <= 1 else fibonacci(n-1) + fibonacci(n-2)',
+            'SELECT * FROM users WHERE id = ?',
+            'function quickSort(arr) { if (arr.length <= 1) return arr; }',
+            'class Node { constructor(data) { this.data = data; this.next = null; } }',
+            'O(n log n) // Time complexity',
+            'git commit -m "Initial commit"',
+            'import tensorflow as tf',
+            'const express = require("express");',
+            'void setup() { Serial.begin(9600); }',
+            'algorithm BFS(graph, start):',
+            'npm install react',
+            'pip install flask',
+            'docker run -p 5000:5000 app',
+            'if __name__ == "__main__":',
+            'try { await fetch("/api/data"); } catch (e) {}',
+            'CREATE TABLE portfolio (id INT PRIMARY KEY);',
+            'machine learning model.fit(X_train, y_train)',
+            'IoT sensor.read_temperature()',
+            'API response.json()',
+            'while (true) { loop(); delay(1000); }'
         ];
         this.drops = [];
         
@@ -49,8 +49,15 @@ class MathematicalBackground {
     }
     
     animate() {
-        // Clear canvas with very subtle fade
-        this.ctx.fillStyle = 'rgba(0, 0, 0, 0.03)';
+        // Get current theme
+        const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+        
+        // Clear canvas with theme-appropriate fade
+        if (isDark) {
+            this.ctx.fillStyle = 'rgba(0, 0, 0, 0.03)';
+        } else {
+            this.ctx.fillStyle = 'rgba(248, 249, 250, 0.03)';
+        }
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         
         this.ctx.font = `${this.fontSize}px 'JetBrains Mono', monospace`;
@@ -61,8 +68,12 @@ class MathematicalBackground {
             const x = i * (this.fontSize * 8);
             const y = drop.y;
             
-            // Set opacity and color
-            this.ctx.fillStyle = `rgba(255, 255, 255, ${drop.opacity})`;
+            // Set opacity and color based on theme
+            if (isDark) {
+                this.ctx.fillStyle = `rgba(255, 255, 255, ${drop.opacity})`;
+            } else {
+                this.ctx.fillStyle = `rgba(0, 0, 0, ${drop.opacity})`;
+            }
             
             // Draw equation
             this.ctx.fillText(drop.equation, x, y);

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a portfolio website built with Flask inspired by Darren Aronofsky's Pi (1998), showcasing Pulkit Bhardwaj's professional experience and education. The application features a stark, black-and-white mathematical design with high contrast visuals, mathematical formula backgrounds, and intense terminal-style aesthetics reminiscent of the film's paranoid, mathematical obsession theme.
+This is a portfolio website built with Flask inspired by Darren Aronofsky's Pi (1998), showcasing Pulkit Bhardwaj's professional experience and education. The application features a stark, black-and-white design with high contrast visuals, computer science code backgrounds, and intense terminal-style aesthetics reminiscent of the film's paranoid obsession theme. Now includes dark/light mode toggle functionality.
 
 ## User Preferences
 
@@ -31,11 +31,12 @@ The application follows a simple Flask-based architecture with a single-page des
 - **Google Fonts**: JetBrains Mono and Fira Code for monospace terminal aesthetic
 
 ### Interactive Features
-- **Mathematical Formula Background**: Canvas-based background animation with floating mathematical equations and formulas
-- **Boot Sequence**: Terminal-style loading screen with mathematical computation messages
-- **Cursor Trail**: Stark white cursor dot with subtle glow effect
-- **Responsive Design**: Mobile-friendly layout using Bootstrap grid system
-- **High Contrast Visual Effects**: Paranoid text animations, stark borders, and intense white-on-black aesthetics
+- **Computer Science Code Background**: Canvas-based background animation with floating programming code snippets and algorithms
+- **Boot Sequence**: Terminal-style loading screen with portfolio-relevant technical messages
+- **Cursor Trail**: Theme-aware cursor dot with subtle glow effect
+- **Dark/Light Mode Toggle**: Fully functional theme switcher with localStorage persistence
+- **Responsive Design**: Mobile-friendly layout using Bootstrap grid system with mobile theme toggle
+- **High Contrast Visual Effects**: Paranoid text animations, stark borders, and intense theme-aware aesthetics
 
 ## Data Flow
 

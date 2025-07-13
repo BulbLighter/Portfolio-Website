@@ -5,15 +5,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const bootText = document.getElementById('boot-text');
     
     const bootMessages = [
-        'CALCULATING π TO 1000 DECIMAL PLACES...',
-        'LOADING MATHEMATICAL THEOREMS...',
-        'PARSING FIBONACCI SEQUENCE...',
-        'ANALYZING PRIME NUMBERS...',
-        'COMPUTING EULER\'S IDENTITY...',
-        'PROCESSING NUMERICAL PATTERNS...',
-        'INITIALIZING ALGORITHM SEQUENCES...',
-        'COMPILING PORTFOLIO DATA...',
-        'SYSTEM READY. ENTER THE EQUATION.'
+        'INITIALIZING FLASK WEB FRAMEWORK...',
+        'LOADING PYTHON ALGORITHMS...',
+        'PARSING JAVASCRIPT MODULES...',
+        'COMPILING C++ IMPLEMENTATIONS...',
+        'ESTABLISHING API CONNECTIONS...',
+        'PROCESSING IoT SENSOR DATA...',
+        'LOADING AI MODEL WEIGHTS...',
+        'SYNCHRONIZING DATABASE TABLES...',
+        'PULKIT BHARDWAJ PORTFOLIO READY.'
     ];
     
     let messageIndex = 0;
@@ -56,6 +56,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Start boot sequence
     setTimeout(showNextMessage, 1000);
+    
+    // Theme toggle functionality
+    const themeToggleMobile = document.getElementById('theme-toggle');
+    const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    
+    // Set initial theme
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    const buttonText = currentTheme === 'dark' ? 'LIGHT' : 'DARK';
+    themeToggleMobile.textContent = buttonText;
+    themeToggleDesktop.textContent = buttonText;
+    
+    function toggleTheme() {
+        const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        const newButtonText = newTheme === 'dark' ? 'LIGHT' : 'DARK';
+        themeToggleMobile.textContent = newButtonText;
+        themeToggleDesktop.textContent = newButtonText;
+    }
+    
+    themeToggleMobile.addEventListener('click', toggleTheme);
+    themeToggleDesktop.addEventListener('click', toggleTheme);
     
     function startPortfolio() {
         // Cursor trail effect
