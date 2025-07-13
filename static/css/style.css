@@ -293,6 +293,79 @@ body {
     }
 }
 
+/* Playdead-style flickering animations - subtle and atmospheric */
+@keyframes limbo-flicker {
+    0%, 98.5% { 
+        opacity: 1; 
+        text-shadow: var(--intensity-glow);
+    }
+    99% { 
+        opacity: 0.2; 
+        text-shadow: none;
+    }
+    99.5% { 
+        opacity: 0.8; 
+        text-shadow: var(--intensity-glow);
+    }
+    100% { 
+        opacity: 1; 
+        text-shadow: var(--intensity-glow);
+    }
+}
+
+@keyframes inside-flicker {
+    0%, 97.5% { 
+        opacity: 1; 
+        text-shadow: var(--intensity-glow);
+    }
+    98% { 
+        opacity: 0.1; 
+        text-shadow: none;
+    }
+    99% { 
+        opacity: 0.6; 
+        text-shadow: var(--intensity-glow);
+    }
+    100% { 
+        opacity: 1; 
+        text-shadow: var(--intensity-glow);
+    }
+}
+
+@keyframes subtle-flicker {
+    0%, 99.2% { 
+        opacity: 1; 
+        text-shadow: var(--intensity-glow);
+    }
+    99.6% { 
+        opacity: 0.4; 
+        text-shadow: none;
+    }
+    100% { 
+        opacity: 1; 
+        text-shadow: var(--intensity-glow);
+    }
+}
+
+@keyframes deep-flicker {
+    0%, 98.8% { 
+        opacity: 1; 
+        text-shadow: var(--intensity-glow);
+    }
+    99.2% { 
+        opacity: 0.1; 
+        text-shadow: none;
+    }
+    99.6% { 
+        opacity: 0.9; 
+        text-shadow: var(--intensity-glow);
+    }
+    100% { 
+        opacity: 1; 
+        text-shadow: var(--intensity-glow);
+    }
+}
+
 /* Main Content */
 .main-content {
     margin-top: 80px;
@@ -365,6 +438,7 @@ body {
     text-shadow: var(--intensity-glow);
     margin-bottom: 10px;
     font-weight: bold;
+    animation: limbo-flicker 14s infinite;
 }
 
 .hero-title {

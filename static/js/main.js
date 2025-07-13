@@ -80,6 +80,25 @@ document.addEventListener('DOMContentLoaded', function() {
     themeToggleMobile.addEventListener('click', toggleTheme);
     themeToggleDesktop.addEventListener('click', toggleTheme);
     
+    // Apply Playdead-style flickering to section headers
+    function applyFlickerEffects() {
+        const sectionTitles = document.querySelectorAll('.section-title');
+        const flickerTypes = ['inside-flicker', 'subtle-flicker', 'deep-flicker', 'limbo-flicker'];
+        const durations = ['16s', '18s', '22s', '25s', '28s', '32s'];
+        
+        sectionTitles.forEach((title, index) => {
+            const flickerType = flickerTypes[index % flickerTypes.length];
+            const duration = durations[index % durations.length];
+            const delay = Math.random() * 5; // Random delay up to 5 seconds
+            
+            title.style.animation = `${flickerType} ${duration} infinite`;
+            title.style.animationDelay = `${delay}s`;
+        });
+    }
+    
+    // Initialize flicker effects
+    applyFlickerEffects();
+    
     function startPortfolio() {
         // Cursor trail effect
         const cursorTrail = document.getElementById('cursor-trail');
