@@ -43,7 +43,7 @@
 }
 
 body {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Share Tech Mono', 'JetBrains Mono', monospace;
     background: var(--primary-bg);
     color: var(--text-primary);
     overflow-x: hidden;
@@ -182,6 +182,7 @@ body {
 }
 
 .nav-brand {
+    font-family: 'Orbitron', 'Share Tech Mono', monospace;
     font-size: 1.5em;
     font-weight: bold;
     color: var(--accent-white);
@@ -197,19 +198,19 @@ body {
 /* Theme Toggle Button */
 .theme-toggle {
     background: none;
-    border: 2px solid var(--accent-white);
-    color: var(--accent-white);
+    border: 2px solid var(--text-primary);
+    color: var(--text-primary);
     padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Audiowide', 'Share Tech Mono', monospace;
     font-size: 0.9em;
     transition: all 0.3s ease;
     margin-left: 20px;
 }
 
 .theme-toggle:hover {
-    background: var(--accent-white);
+    background: var(--text-primary);
     color: var(--primary-bg);
     box-shadow: var(--subtle-glow);
 }
@@ -308,6 +309,7 @@ body {
 }
 
 .section-title {
+    font-family: 'Orbitron', 'Audiowide', 'Share Tech Mono', monospace;
     font-size: 2.5em;
     color: var(--accent-white);
     text-shadow: var(--intensity-glow);
@@ -357,6 +359,7 @@ body {
 }
 
 .hero-name {
+    font-family: 'Orbitron', 'Share Tech Mono', monospace;
     font-size: 3em;
     color: var(--accent-white);
     text-shadow: var(--intensity-glow);

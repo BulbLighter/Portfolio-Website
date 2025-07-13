@@ -4,27 +4,26 @@ class MathematicalBackground {
         this.canvas = document.getElementById('matrix-canvas');
         this.ctx = this.canvas.getContext('2d');
         this.fontSize = 12;
-        this.equations = [
-            'def fibonacci(n): return n if n <= 1 else fibonacci(n-1) + fibonacci(n-2)',
-            'SELECT * FROM users WHERE id = ?',
-            'function quickSort(arr) { if (arr.length <= 1) return arr; }',
-            'class Node { constructor(data) { this.data = data; this.next = null; } }',
-            'O(n log n) // Time complexity',
-            'git commit -m "Initial commit"',
-            'import tensorflow as tf',
-            'const express = require("express");',
-            'void setup() { Serial.begin(9600); }',
-            'algorithm BFS(graph, start):',
-            'npm install react',
-            'pip install flask',
-            'docker run -p 5000:5000 app',
-            'if __name__ == "__main__":',
-            'try { await fetch("/api/data"); } catch (e) {}',
-            'CREATE TABLE portfolio (id INT PRIMARY KEY);',
-            'machine learning model.fit(X_train, y_train)',
-            'IoT sensor.read_temperature()',
-            'API response.json()',
-            'while (true) { loop(); delay(1000); }'
+        this.devices = [
+            '💻', '🖥️', '📱', '⌨️', '🖱️', '🎮', '💾', '📀', '🔌', '🖨️',
+            '📟', '📞', '📺', '📻', '🎧', '🔊', '📷', '📹', '💿', '📼',
+            '🕹️', '⚡', '🔋', '💡', '🔌', '📡', '🛰️', '🌐', '💳', '🏧',
+            '⏰', '📠', '📽️', '🎬', '🎤', '🎚️', '🎛️', '📟', '📞', '📱',
+            '💻', '🖥️', '📟', '📱', '🖱️', '⌨️', '🖨️', '📷', '📹', '🎮'
+        ];
+        
+        this.codeSnippets = [
+            'def fibonacci(n):', 'SELECT * FROM users', 'function quickSort()',
+            'class Node:', 'O(n log n)', 'git commit -m', 'import tensorflow',
+            'const express = require', 'void setup()', 'algorithm BFS',
+            'npm install react', 'pip install flask', 'docker run -p',
+            'if __name__ == "__main__":', 'try { await fetch', 'CREATE TABLE',
+            'machine learning model', 'IoT sensor.read()', 'API response.json()',
+            'while (true) { loop(); }', 'System.out.println', 'console.log',
+            'print("Hello World")', 'public static void main', 'int main()',
+            'for (int i = 0; i < n; i++)', 'std::cout << "Hello"',
+            'from flask import Flask', 'app = Flask(__name__)',
+            'const app = express()', 'public class Main'
         ];
         this.drops = [];
         
@@ -39,11 +38,15 @@ class MathematicalBackground {
         const columns = Math.floor(this.canvas.width / (this.fontSize * 8));
         
         for (let i = 0; i < columns; i++) {
+            const isDevice = Math.random() < 0.4; // 40% chance to show device, 60% for code
             this.drops[i] = {
                 y: Math.random() * -200,
-                equation: this.equations[Math.floor(Math.random() * this.equations.length)],
+                content: isDevice ? 
+                    this.devices[Math.floor(Math.random() * this.devices.length)] :
+                    this.codeSnippets[Math.floor(Math.random() * this.codeSnippets.length)],
                 speed: 0.3 + Math.random() * 0.7,
-                opacity: 0.3 + Math.random() * 0.4
+                opacity: 0.3 + Math.random() * 0.4,
+                isDevice: isDevice
             };
         }
     }
@@ -75,8 +78,15 @@ class MathematicalBackground {
                 this.ctx.fillStyle = `rgba(0, 0, 0, ${drop.opacity})`;
             }
             
-            // Draw equation
-            this.ctx.fillText(drop.equation, x, y);
+            // Set font size based on content type
+            if (drop.isDevice) {
+                this.ctx.font = `${this.fontSize * 1.5}px 'JetBrains Mono', monospace`;
+            } else {
+                this.ctx.font = `${this.fontSize}px 'JetBrains Mono', monospace`;
+            }
+            
+            // Draw content
+            this.ctx.fillText(drop.content, x, y);
             
             // Update position
             drop.y += drop.speed;
@@ -84,9 +94,13 @@ class MathematicalBackground {
             // Reset drop when it goes off screen
             if (y > this.canvas.height + 50) {
                 drop.y = Math.random() * -200;
-                drop.equation = this.equations[Math.floor(Math.random() * this.equations.length)];
+                const isDevice = Math.random() < 0.4;
+                drop.content = isDevice ? 
+                    this.devices[Math.floor(Math.random() * this.devices.length)] :
+                    this.codeSnippets[Math.floor(Math.random() * this.codeSnippets.length)];
                 drop.speed = 0.3 + Math.random() * 0.7;
                 drop.opacity = 0.2 + Math.random() * 0.3;
+                drop.isDevice = isDevice;
             }
         }
         
