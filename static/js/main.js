@@ -5,23 +5,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const bootText = document.getElementById('boot-text');
     
     const bootMessages = [
-        'INITIALIZING NEURAL NETWORK...',
-        'LOADING CYBERNETIC MODULES...',
-        'ESTABLISHING MATRIX CONNECTION...',
-        'SCANNING BIOMETRIC DATA...',
-        'ACCESSING MAINFRAME...',
-        'DECRYPTING PORTFOLIO DATA...',
-        'SYNCHRONIZING QUANTUM PROCESSORS...',
-        'BOOTING HOLOGRAPHIC INTERFACE...',
-        'SYSTEM READY. WELCOME TO THE MATRIX.'
+        'CALCULATING π TO 1000 DECIMAL PLACES...',
+        'LOADING MATHEMATICAL THEOREMS...',
+        'PARSING FIBONACCI SEQUENCE...',
+        'ANALYZING PRIME NUMBERS...',
+        'COMPUTING EULER\'S IDENTITY...',
+        'PROCESSING NUMERICAL PATTERNS...',
+        'INITIALIZING ALGORITHM SEQUENCES...',
+        'COMPILING PORTFOLIO DATA...',
+        'SYSTEM READY. ENTER THE EQUATION.'
     ];
     
     let messageIndex = 0;
     
     function typeMessage(message, callback) {
         const span = document.createElement('div');
-        span.style.color = '#00ff41';
+        span.style.color = '#ffffff';
         span.style.marginBottom = '10px';
+        span.style.textShadow = '0 0 5px #ffffff';
         bootText.appendChild(span);
         
         let charIndex = 0;
@@ -184,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const terminalBody = terminal.querySelector('.terminal-body');
                 const commandLine = document.createElement('div');
                 commandLine.className = 'command-line';
-                commandLine.innerHTML = '<span class="prompt">root@matrix:~$ </span><span class="typing-text">ls -la</span>';
+                commandLine.innerHTML = '<span class="prompt">root@calculate:~$ </span><span class="typing-text">ls -la</span>';
                 terminalBody.appendChild(commandLine);
                 
                 setTimeout(() => {
@@ -204,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 particle.style.position = 'absolute';
                 particle.style.width = '2px';
                 particle.style.height = '2px';
-                particle.style.background = '#00ff41';
+                particle.style.background = '#ffffff';
                 particle.style.borderRadius = '50%';
                 particle.style.pointerEvents = 'none';
                 particle.style.opacity = '0.8';
@@ -255,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
             scanline.style.left = '0';
             scanline.style.width = '100%';
             scanline.style.height = '2px';
-            scanline.style.background = 'linear-gradient(90deg, transparent, #00ff41, transparent)';
+            scanline.style.background = 'linear-gradient(90deg, transparent, #ffffff, transparent)';
             scanline.style.zIndex = '9999';
             scanline.style.pointerEvents = 'none';
             scanline.style.opacity = '0.5';
@@ -314,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const randomElement = elements[Math.floor(Math.random() * elements.length)];
         
         if (randomElement) {
-            randomElement.style.textShadow = '2px 0 #ff0099, -2px 0 #00ffff';
+            randomElement.style.textShadow = '2px 0 #ffffff, -2px 0 #cccccc';
             
             setTimeout(() => {
                 randomElement.style.textShadow = '';

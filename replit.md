@@ -1,8 +1,8 @@
-# Cyberpunk Portfolio
+# Pi (1998) Inspired Portfolio
 
 ## Overview
 
-This is a cyberpunk-themed portfolio website built with Flask, showcasing Pulkit Bhardwaj's professional experience and education. The application features a futuristic, matrix-inspired design with interactive elements including a boot sequence, matrix rain background, and terminal-style aesthetics.
+This is a portfolio website built with Flask inspired by Darren Aronofsky's Pi (1998), showcasing Pulkit Bhardwaj's professional experience and education. The application features a stark, black-and-white mathematical design with high contrast visuals, mathematical formula backgrounds, and intense terminal-style aesthetics reminiscent of the film's paranoid, mathematical obsession theme.
 
 ## User Preferences
 
@@ -31,10 +31,11 @@ The application follows a simple Flask-based architecture with a single-page des
 - **Google Fonts**: JetBrains Mono and Fira Code for monospace terminal aesthetic
 
 ### Interactive Features
-- **Matrix Rain Effect**: Canvas-based background animation mimicking the Matrix movie
-- **Boot Sequence**: Terminal-style loading screen with typewriter effect
-- **Cursor Trail**: Custom cursor with neon glow effect
+- **Mathematical Formula Background**: Canvas-based background animation with floating mathematical equations and formulas
+- **Boot Sequence**: Terminal-style loading screen with mathematical computation messages
+- **Cursor Trail**: Stark white cursor dot with subtle glow effect
 - **Responsive Design**: Mobile-friendly layout using Bootstrap grid system
+- **High Contrast Visual Effects**: Paranoid text animations, stark borders, and intense white-on-black aesthetics
 
 ## Data Flow
 

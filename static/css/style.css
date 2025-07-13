@@ -1,19 +1,20 @@
-/* Cyberpunk Portfolio Styles */
+/* Pi (1998) - Darren Aronofsky Inspired Styles */
 :root {
-    --primary-bg: #0a0a0a;
-    --secondary-bg: #1a1a1a;
-    --terminal-bg: #0d1117;
-    --neon-green: #00ff41;
-    --neon-blue: #0099ff;
-    --neon-pink: #ff0099;
-    --neon-cyan: #00ffff;
-    --amber: #ffb000;
-    --red: #ff4444;
-    --terminal-green: #00ff41;
+    --primary-bg: #000000;
+    --secondary-bg: #111111;
+    --terminal-bg: #000000;
+    --accent-white: #ffffff;
+    --stark-white: #f5f5f5;
+    --number-glow: #ffffff;
+    --calculation-text: #cccccc;
+    --math-symbols: #ffffff;
+    --paranoid-red: #ff0000;
+    --tension-shadow: #333333;
     --text-primary: #ffffff;
     --text-secondary: #cccccc;
     --text-muted: #666666;
-    --glow-size: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+    --intensity-glow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+    --subtle-glow: 0 0 5px #ffffff;
 }
 
 * {
@@ -28,28 +29,33 @@ body {
     color: var(--text-primary);
     overflow-x: hidden;
     cursor: none;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Matrix Background */
+/* Mathematical Formula Background */
 #matrix-canvas {
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
     pointer-events: none;
+    filter: contrast(1.5) brightness(0.8);
 }
 
-/* Cursor Trail */
+/* Cursor Trail - Stark white dot */
 #cursor-trail {
     position: fixed;
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle, var(--neon-green) 0%, transparent 70%);
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, var(--accent-white) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 1000;
-    mix-blend-mode: screen;
-    opacity: 0.8;
+    mix-blend-mode: difference;
+    opacity: 0.9;
+    box-shadow: var(--subtle-glow);
 }
 
 /* Boot Sequence */
@@ -72,12 +78,12 @@ body {
     pointer-events: none;
 }
 
-/* Terminal Window */
+/* Terminal Window - Stark, high contrast */
 .terminal-window {
     background: var(--terminal-bg);
-    border: 1px solid var(--neon-green);
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+    border: 2px solid var(--accent-white);
+    border-radius: 0;
+    box-shadow: 0 0 0 2px var(--primary-bg), 0 0 0 4px var(--accent-white);
     margin: 20px 0;
     position: relative;
     overflow: hidden;
@@ -92,9 +98,9 @@ body {
     bottom: 0;
     background: repeating-linear-gradient(
         transparent,
-        transparent 2px,
-        rgba(0, 255, 65, 0.03) 2px,
-        rgba(0, 255, 65, 0.03) 4px
+        transparent 1px,
+        rgba(255, 255, 255, 0.02) 1px,
+        rgba(255, 255, 255, 0.02) 2px
     );
     pointer-events: none;
 }
@@ -102,35 +108,38 @@ body {
 .terminal-header {
     background: var(--secondary-bg);
     padding: 8px 16px;
-    border-bottom: 1px solid var(--neon-green);
+    border-bottom: 2px solid var(--accent-white);
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 .terminal-button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 0;
     display: inline-block;
+    border: 1px solid var(--accent-white);
 }
 
 .terminal-button.red {
-    background: var(--red);
+    background: var(--accent-white);
 }
 
 .terminal-button.yellow {
-    background: var(--amber);
+    background: var(--tension-shadow);
 }
 
 .terminal-button.green {
-    background: var(--neon-green);
+    background: var(--accent-white);
 }
 
 .terminal-title {
-    color: var(--text-secondary);
+    color: var(--text-primary);
     font-size: 0.9em;
     margin-left: auto;
+    font-weight: bold;
+    text-shadow: var(--subtle-glow);
 }
 
 .terminal-body {
@@ -138,11 +147,11 @@ body {
     font-family: 'Fira Code', monospace;
 }
 
-/* Navigation */
+/* Navigation - Stark, intense */
 .cyber-nav {
-    background: rgba(13, 17, 23, 0.95);
-    border-bottom: 1px solid var(--neon-green);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.98);
+    border-bottom: 2px solid var(--accent-white);
+    backdrop-filter: contrast(2);
     z-index: 1000;
 }
 
@@ -156,7 +165,8 @@ body {
 .nav-brand {
     font-size: 1.5em;
     font-weight: bold;
-    color: var(--neon-green);
+    color: var(--accent-white);
+    text-shadow: var(--intensity-glow);
 }
 
 .nav-links {
@@ -168,13 +178,15 @@ body {
     color: var(--text-secondary);
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .nav-link:hover {
-    color: var(--neon-green);
-    text-shadow: var(--glow-size);
+    color: var(--accent-white);
+    text-shadow: var(--intensity-glow);
 }
 
 .nav-link::after {
@@ -184,15 +196,15 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--neon-green);
-    transition: width 0.3s ease;
+    background: var(--accent-white);
+    transition: width 0.2s ease;
 }
 
 .nav-link:hover::after {
     width: 100%;
 }
 
-/* Glitch Effect */
+/* Paranoid Text Effect - Inspired by Pi's intensity */
 .glitch-text {
     position: relative;
     display: inline-block;
@@ -209,32 +221,34 @@ body {
 }
 
 .glitch-text::before {
-    animation: glitch-1 0.5s infinite;
-    color: var(--neon-pink);
+    animation: paranoid-1 0.8s infinite;
+    color: var(--accent-white);
     z-index: -1;
+    opacity: 0.8;
 }
 
 .glitch-text::after {
-    animation: glitch-2 0.5s infinite;
-    color: var(--neon-cyan);
+    animation: paranoid-2 0.8s infinite;
+    color: var(--tension-shadow);
     z-index: -2;
+    opacity: 0.6;
 }
 
-@keyframes glitch-1 {
+@keyframes paranoid-1 {
     0%, 14%, 15%, 49%, 50%, 99%, 100% {
         transform: translate(0);
     }
     15%, 49% {
-        transform: translate(-2px, 0);
+        transform: translate(-1px, 0);
     }
 }
 
-@keyframes glitch-2 {
+@keyframes paranoid-2 {
     0%, 20%, 21%, 62%, 63%, 99%, 100% {
         transform: translate(0);
     }
     21%, 62% {
-        transform: translate(2px, 0);
+        transform: translate(1px, 0);
     }
 }
 
@@ -255,23 +269,26 @@ body {
 
 .section-title {
     font-size: 2.5em;
-    color: var(--neon-green);
-    text-shadow: var(--glow-size);
+    color: var(--accent-white);
+    text-shadow: var(--intensity-glow);
     margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .prompt {
-    color: var(--neon-green);
+    color: var(--accent-white);
     margin-right: 10px;
+    font-weight: bold;
 }
 
-/* Hero Section */
+/* Hero Section - Stark, mathematical */
 .hero-section {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at center, rgba(0, 255, 65, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
 }
 
 .main-terminal {
@@ -281,16 +298,16 @@ body {
 
 .command-line {
     margin: 20px 0;
-    color: var(--neon-green);
+    color: var(--accent-white);
 }
 
 .typing-text {
-    border-right: 2px solid var(--neon-green);
+    border-right: 2px solid var(--accent-white);
     animation: blink 1s infinite;
 }
 
 @keyframes blink {
-    0%, 50% { border-color: var(--neon-green); }
+    0%, 50% { border-color: var(--accent-white); }
     51%, 100% { border-color: transparent; }
 }
 
@@ -301,14 +318,15 @@ body {
 
 .hero-name {
     font-size: 3em;
-    color: var(--neon-green);
-    text-shadow: var(--glow-size);
+    color: var(--accent-white);
+    text-shadow: var(--intensity-glow);
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .hero-title {
     font-size: 1.2em;
-    color: var(--neon-cyan);
+    color: var(--calculation-text);
     margin-bottom: 30px;
 }
 
