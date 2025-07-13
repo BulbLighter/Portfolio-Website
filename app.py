@@ -42,8 +42,8 @@ def index():
                 'period': 'Jan 2025 – Apr 2025',
                 'location': 'Remote',
                 'certificates': [
-                    'https://drive.google.com/file/d/1RxXFUwHPjwE-THkI2yW2F1EzAIllXYIE/view?usp=sharing',
-                    'https://drive.google.com/drive/folders/1Px3pcMg7sus0yPqQjrblfYemsY_f20cN?usp=sharing'
+                    {'url': 'https://drive.google.com/file/d/1RxXFUwHPjwE-THkI2yW2F1EzAIllXYIE/view?usp=sharing', 'type': 'Internship Certificate'},
+                    {'url': 'https://drive.google.com/drive/folders/1Px3pcMg7sus0yPqQjrblfYemsY_f20cN?usp=sharing', 'type': 'Training Certificate'}
                 ],
                 'achievements': [
                     'Implemented Python algorithms including FizzBuzz and random number generator',
@@ -60,8 +60,8 @@ def index():
                 'period': 'Aug 2024 – Dec 2024',
                 'location': 'Remote',
                 'certificates': [
-                    'https://drive.google.com/file/d/1l2xGd-37ohmcfhc-Q_F7X0BWx5Uw3Eva/view?usp=sharing',
-                    'https://drive.google.com/drive/folders/17WnB0DUf1KN2T36H4VrMecjgHQ9bssHA?usp=sharing'
+                    {'url': 'https://drive.google.com/file/d/1l2xGd-37ohmcfhc-Q_F7X0BWx5Uw3Eva/view?usp=sharing', 'type': 'Internship Certificate'},
+                    {'url': 'https://drive.google.com/drive/folders/17WnB0DUf1KN2T36H4VrMecjgHQ9bssHA?usp=sharing', 'type': 'Training Certificate'}
                 ],
                 'achievements': [
                     'Gained comprehensive AI fundamentals and generative AI knowledge',

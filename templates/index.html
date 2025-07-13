@@ -117,9 +117,7 @@
         <section id="education" class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title glitch-text" data-text="EDUCATION">
-                        <span class="prompt">root@calculate:~$ </span>EDUCATION
-                    </h2>
+                    <h2 class="section-title glitch-text" data-text="EDUCATION">EDUCATION</h2>
                 </div>
                 <div class="row">
                     {% for edu in data.education %}
@@ -144,9 +142,7 @@
         <section id="experience" class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title glitch-text" data-text="EXPERIENCE">
-                        <span class="prompt">root@calculate:~$ </span>EXPERIENCE
-                    </h2>
+                    <h2 class="section-title glitch-text" data-text="EXPERIENCE">EXPERIENCE</h2>
                 </div>
                 {% for exp in data.experience %}
                 <div class="experience-item">
@@ -165,8 +161,8 @@
                             </div>
                             <div class="certificates">
                                 {% for cert in exp.certificates %}
-                                <a href="{{ cert }}" target="_blank" class="cert-link">
-                                    <i class="fas fa-certificate"></i> Certificate
+                                <a href="{{ cert.url }}" target="_blank" class="cert-link">
+                                    <i class="fas fa-certificate"></i> {{ cert.type }}
                                 </a>
                                 {% endfor %}
                             </div>
@@ -186,9 +182,7 @@
         <section id="skills" class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title glitch-text" data-text="SKILLS">
-                        <span class="prompt">root@calculate:~$ </span>SKILLS
-                    </h2>
+                    <h2 class="section-title glitch-text" data-text="SKILLS">SKILLS</h2>
                 </div>
                 <div class="row">
                     {% for category, skills in data.skills.items() %}
@@ -216,9 +210,7 @@
         <section id="projects" class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title glitch-text" data-text="PROJECTS">
-                        <span class="prompt">root@calculate:~$ </span>PROJECTS
-                    </h2>
+                    <h2 class="section-title glitch-text" data-text="PROJECTS">PROJECTS</h2>
                 </div>
                 <div class="row">
                     {% for project in data.projects %}
@@ -262,9 +254,7 @@
         <section id="achievements" class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title glitch-text" data-text="ACHIEVEMENTS">
-                        <span class="prompt">root@calculate:~$ </span>ACHIEVEMENTS
-                    </h2>
+                    <h2 class="section-title glitch-text" data-text="ACHIEVEMENTS">ACHIEVEMENTS</h2>
                 </div>
                 <div class="row">
                     {% for achievement in data.achievements %}
@@ -289,9 +279,7 @@
         <section id="contact" class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title glitch-text" data-text="CONTACT">
-                        <span class="prompt">root@calculate:~$ </span>CONTACT
-                    </h2>
+                    <h2 class="section-title glitch-text" data-text="CONTACT">CONTACT</h2>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-8">
