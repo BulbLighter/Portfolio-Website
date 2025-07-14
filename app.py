@@ -144,8 +144,8 @@ def index():
                 'certificate': None
             },
             {
-                'title': 'Legend of Python Course by Codedx',
-                'certificate': 'https://www.codedx.io/certificates/a224b0de-e3b1-457a-9d80-54f346ba5a90'
+                'title': 'Legend of Python Course by Codedex',
+                'certificate': 'https://www.codedex.io/certificates/a224b0de-e3b1-457a-9d80-54f346ba5a90'
             },
             {
                 'title': 'KPMG Capture the Flag Hackathon 2023',
