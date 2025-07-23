@@ -37,6 +37,23 @@ def index():
         ],
         'experience': [
             {
+                'company': 'XRC Studios Pvt. Ltd.',
+                'position': 'Full Stack Intern',
+                'period': 'Apr 2025 – July 2025',
+                'location': 'Hybrid',
+                'certificates': [
+                    {'url': 'https://drive.google.com/file/d/1aaFCAb4dRaepILQgmS1MzGUoT3YunGCz/view?usp=sharing', 'type': 'Internship Certificate'}
+                ],
+                'achievements': [
+                    'Developed a full-stack AI-powered game-based learning platform using React, TypeScript and Node.js',
+                    'Implemented data visualization dashboard with Recharts, and regression-js for predictive analytics',
+                    'Built real-time features using Socket.io for live leaderboards and integrated OpenAI API for intelligent quiz feedback',
+                    'Created physics-based educational game with HTML5 Canvas featuring 5-level progression and interactive feedback',
+                    'Delivered 15+ markdown documentation files for day to day activities and conducted API testing via Postman',
+                    'Conducted comprehensive analysis of different gamified learning platforms to guide strategic platform development'
+                ]
+            },
+            {
                 'company': 'Inventrom Private Limited - Bolt IoT',
                 'position': 'Software Development Intern',
                 'period': 'Jan 2025 – Apr 2025',
