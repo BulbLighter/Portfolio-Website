@@ -91,9 +91,12 @@ def index():
             }
         ],
         'skills': {
-            'Programming': ['Python', 'JavaScript', 'C/C++', 'HTML/CSS', 'SQL'],
-            'Frameworks & Tools': ['Flask', 'Node.js', 'Replit', 'Git/Github'],
-            'Development & Hardware': ['API Integration', 'Sensor Integration', 'Microcontrollers']
+            'Programming': ['Python', 'JavaScript', 'TypeScript', 'C/C++', 'HTML/CSS', 'SQL'],
+            'Frontend': ['React', 'HTML5 Canvas', 'Bootstrap', 'Recharts'],
+            'Backend & APIs': ['Node.js', 'Flask', 'OpenAI API', 'Socket.io', 'REST APIs', 'Twilio', 'Mailgun'],
+            'Tools & Platforms': ['Git/GitHub', 'Postman', 'WSL', 'Bolt Cloud Platform', 'HubSpot', 'Render', 'Railway'],
+            'Databases & Analytics': ['PostgreSQL', 'regression-js', 'Statistical Analysis'],
+            'IoT & Hardware': ['Microcontrollers', 'GPIO', 'ADC', 'Sensors (LM35, LDR)', 'Circuit Design']
         },
         'projects': [
             {
