@@ -805,6 +805,43 @@ body {
     color: var(--amber);
     font-size: 1em;
     margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.achievement-event {
+    color: var(--neon-green);
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.achievement-date {
+    color: var(--text-color);
+    font-size: 0.8em;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.achievement-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.cert-link {
+    color: var(--neon-blue);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.cert-link:hover {
+    color: var(--amber);
+    text-decoration: underline;
+}
+
+.cert-link i {
+    margin-right: 5px;
 }
 
 /* Contact */

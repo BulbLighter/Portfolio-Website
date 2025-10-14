@@ -262,11 +262,26 @@
                         <div class="achievement-item">
                             <div class="achievement-content">
                                 <h4 class="achievement-title">{{ achievement.title }}</h4>
-                                {% if achievement.certificate %}
-                                <a href="{{ achievement.certificate }}" target="_blank" class="cert-link">
-                                    <i class="fas fa-certificate"></i> Certificate
-                                </a>
+                                {% if achievement.event %}
+                                <p class="achievement-event">{{ achievement.event }}</p>
                                 {% endif %}
+                                {% if achievement.date %}
+                                <p class="achievement-date">{{ achievement.date }}</p>
+                                {% endif %}
+                                <div class="achievement-links">
+                                    {% if achievement.links %}
+                                        {% for link in achievement.links %}
+                                        <a href="{{ link.url }}" target="_blank" class="cert-link">
+                                            <i class="fas fa-external-link-alt"></i> {{ link.type }}
+                                        </a>
+                                        {% if not loop.last %} | {% endif %}
+                                        {% endfor %}
+                                    {% elif achievement.certificate %}
+                                    <a href="{{ achievement.certificate }}" target="_blank" class="cert-link">
+                                        <i class="fas fa-certificate"></i> Certificate
+                                    </a>
+                                    {% endif %}
+                                </div>
                             </div>
                         </div>
                     </div>
