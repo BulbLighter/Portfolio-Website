@@ -37,6 +37,21 @@ def index():
         ],
         'experience': [
             {
+                'company': 'Optimagine AI',
+                'position': 'Software Engineering Intern',
+                'period': 'Aug 2025 – Sept 2025',
+                'location': 'Remote',
+                'achievements': [
+                    'Contributed to development of AI-powered business strategy platform using React, TypeScript, and Flask',
+                    'Implemented and maintained authentication and credit management systems for user validation and access control',
+                    'Resolved critical polling and API call issues, reducing redundant network requests and improving system efficiency',
+                    'Built and refined UI components for analysis workflows with improved error handling across modules',
+                    'Supported API integration between frontend and backend, ensuring consistent data flow and error resilience',
+                    'Wrote and debugged unit tests for backend services using Python and SQLAlchemy, ensuring functionality and stability',
+                    'Collaborated with senior engineers to identify and fix communication bottlenecks and optimize frontend performance'
+                ]
+            },
+            {
                 'company': 'XRC Studios Pvt. Ltd.',
                 'position': 'Full Stack Intern',
                 'period': 'Apr 2025 – July 2025',
@@ -91,10 +106,10 @@ def index():
             }
         ],
         'skills': {
-            'Programming': ['Python', 'JavaScript', 'TypeScript', 'C/C++', 'HTML/CSS', 'SQL'],
-            'Frontend': ['React', 'HTML5 Canvas', 'Bootstrap', 'Recharts'],
-            'Backend & APIs': ['Node.js', 'Flask', 'OpenAI API', 'Socket.io', 'REST APIs', 'Twilio', 'Mailgun'],
-            'Tools & Platforms': ['Git/GitHub', 'Postman', 'WSL', 'Bolt Cloud Platform', 'HubSpot', 'Render', 'Railway'],
+            'Programming Languages': ['Python', 'JavaScript', 'TypeScript', 'C/C++', 'HTML/CSS', 'SQL'],
+            'Frontend Technologies': ['React', 'HTML5 Canvas', 'Bootstrap', 'Recharts'],
+            'Backend & APIs': ['Node.js', 'Flask', 'OpenAI API', 'Socket.io', 'REST APIs', 'Twilio', 'Mailgun', 'SQLAlchemy'],
+            'Tools & Platforms': ['Git/GitHub', 'Postman', 'WSL', 'Docker', 'yarn', 'Bolt Cloud Platform', 'HubSpot', 'Render', 'Railway'],
             'Databases & Analytics': ['PostgreSQL', 'regression-js', 'Statistical Analysis'],
             'IoT & Hardware': ['Microcontrollers', 'GPIO', 'ADC', 'Sensors (LM35, LDR)', 'Circuit Design']
         },
@@ -152,6 +167,33 @@ def index():
         ],
         'achievements': [
             {
+                'title': 'Rank 1 (2100+ submissions)',
+                'event': 'HTML Hackathon by Coder Army',
+                'date': 'September 2025',
+                'links': [
+                    {'url': 'https://genuine-narwhal-16399e.netlify.app/', 'type': 'Project'},
+                    {'url': 'https://drive.google.com/file/d/1LO4RDT5Zy47oUw1qbKISpEz789Cgi1U1/view', 'type': 'Rank'}
+                ]
+            },
+            {
+                'title': 'Top 2% Hacker',
+                'event': 'Major League Hacking (MLH) Global Hack Week - Beginners Week',
+                'date': 'August 2025',
+                'links': [
+                    {'url': 'https://drive.google.com/file/d/1u79Jb6wMtirTILexnC0BZZg1LG7NN6_a/view', 'type': 'Points Earned'}
+                ]
+            },
+            {
+                'title': 'Selected Project',
+                'event': 'Amazon Q CLI Challenge for projectile simulator game',
+                'date': 'July 2025',
+                'links': [
+                    {'url': 'https://q-deploy-bulblighter-bulblighters-projects.vercel.app', 'type': 'Project'},
+                    {'url': 'https://drive.google.com/file/d/19hoqJdJZhK3nWUZCtENjGEFBQ0-2vpO5/view', 'type': 'Confirmation'},
+                    {'url': 'https://drive.google.com/file/d/1HWKHKBOndzpOO22d1afEE7VYMO8bAoXJ/view', 'type': 'Swag'}
+                ]
+            },
+            {
                 'title': 'KES Konnect 2.0 - 2022',
                 'certificate': 'https://drive.google.com/file/d/1dFRlvhou-cHglTjjqPB_uWhuhmdi6xfj/view?usp=sharing'
             },
@@ -165,7 +207,7 @@ def index():
             },
             {
                 'title': 'Legend of Python Course by Codedex',
-                'certificate': 'https://www.codedex.io/certificates/a224b0de-e3b1-457a-9d80-54f346ba5a90'
+                'certificate': 'https://www.codedx.io/certificates/a224b0de-e3b1-457a-9d80-54f346ba5a90'
             },
             {
                 'title': 'KPMG Capture the Flag Hackathon 2023',
