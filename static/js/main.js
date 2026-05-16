@@ -54,8 +54,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Start boot sequence
-    setTimeout(showNextMessage, 1000);
+    // Check if boot sequence is hidden (secondary pages) - if so, skip to startPortfolio
+    if (bootSequence && bootSequence.style.display === 'none') {
+        startPortfolio();
+    } else {
+        // Start boot sequence (main page only)
+        setTimeout(showNextMessage, 1000);
+    }
     
     // Theme toggle functionality
     const themeToggleMobile = document.getElementById('theme-toggle');
@@ -564,25 +569,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }, 100);
             }, index * 2000 + 1000);
-        });
-        
-        // Smooth scrolling for navigation
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    const offsetTop = targetElement.offsetTop - 100;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
         });
         
         // Glitch effect on hover

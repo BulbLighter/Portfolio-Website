@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - {{ data.name }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    <div id="cursor-trail"></div>
+    
+    <!-- Dummy Boot Sequence (hidden, just for JS initialization) -->
+    <div id="boot-sequence" class="boot-overlay" style="display: none;">
+        <div class="boot-content">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-button red"></span>
+                    <span class="terminal-button yellow"></span>
+                    <span class="terminal-button green"></span>
+                    <span class="terminal-title">CALCULATION ENGINE v3.14</span>
+                </div>
+                <div class="terminal-body">
+                    <div id="boot-text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="cyber-nav fixed-top">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <span class="glitch-text" data-text="{{ data.name }}">{{ data.name }}</span>
+                    <button class="theme-toggle mobile-theme-toggle" id="theme-toggle">LIGHT</button>
+                </div>
+                <div class="nav-links">
+                    <a href="/" class="nav-link">HOME</a>
+                    <a href="/education" class="nav-link">EDUCATION</a>
+                    <a href="/experience" class="nav-link">EXPERIENCE</a>
+                    <a href="/skills" class="nav-link">SKILLS</a>
+                    <a href="/projects" class="nav-link">PROJECTS</a>
+                    <a href="/achievements" class="nav-link">ACHIEVEMENTS</a>
+                    <a href="/contact" class="nav-link">CONTACT</a>
+                    <button class="theme-toggle desktop-theme-toggle" id="theme-toggle-desktop">LIGHT</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="main-content">
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title glitch-text" data-text="EDUCATION">EDUCATION</h2>
+                </div>
+                <div class="row">
+                    {% for edu in data.education %}
+                    <div class="col-md-4 mb-4">
+                        <div class="cyber-card">
+                            <div class="card-header">
+                                <h3 class="card-title">{{ edu.degree }}</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="institution">{{ edu.institution }}</p>
+                                <p class="period">{{ edu.period }}</p>
+                                <p class="grade">{{ edu.grade }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/matrix.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

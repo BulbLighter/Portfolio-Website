@@ -4,10 +4,9 @@ from flask import Flask, render_template
 app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET", "cyberpunk-portfolio-secret-key")
 
-@app.route('/')
-def index():
-    # Portfolio data extracted from the LaTeX resume
-    portfolio_data = {
+def get_portfolio_data():
+    """Return portfolio data used across all routes"""
+    return {
         'name': 'Pulkit Bhardwaj',
         'contact': {
             'email': 'pulkitb169@gmail.com',
@@ -36,6 +35,22 @@ def index():
             }
         ],
         'experience': [
+            {
+                'company': 'Globiva Services Pvt. Ltd.',
+                'position': 'Junior Software Engineer(Apprentice)',
+                'period': 'Feb 2026 – May 2026',
+                'location': 'Not specified',
+                'achievements': [
+                    'Onboarded by reviewing full-stack documentation (RBL frontend & backend) and independently mapping component hierarchies, system architecture, and client-server workflows using flowcharts',
+                    'Built a small CRUD e-commerce app (React + Node.js + MySQL) to internalize data flow patterns before working on production code',
+                    'Explored the Globivion platform end-to-end across multiple modules such as that of recruitment, quality auditing, employee engagement, induction, learning  and ticketing et cetera. Documented workflows and writing feature-level technical documentation',
+                    'Wrote and delivered KT (knowledge transfer) sessions covering Recruitment module\'s job profile, functional units, and remaining modules to the team',
+                    'Implemented backend features for the Partner Portal, including a candidate stage tracking system and a cron job to handle insertion and deletion of stale candidates',
+                    'Built and tested dedicated UI pages for discarded and screened candidates within the partner portal; fixed pagination and cron timing issues; migrated changes to a production-ready branch',
+                    'Participated in UAT meetings for Quality Audits module, a cross-team meeting with the operations team, and for requirements meetings for future partner portal features',
+                    'Worked across the full stack: React (frontend), Node.js/Express (backend), MySQL (database), Redux (state management), and REST APIs'
+                ]
+            },
             {
                 'company': 'Optimagine AI',
                 'position': 'Software Engineering Intern',
@@ -215,8 +230,41 @@ def index():
             }
         ]
     }
-    
+
+@app.route('/')
+def index():
+    portfolio_data = get_portfolio_data()
     return render_template('index.html', data=portfolio_data)
+
+@app.route('/education')
+def education():
+    portfolio_data = get_portfolio_data()
+    return render_template('education.html', data=portfolio_data)
+
+@app.route('/experience')
+def experience():
+    portfolio_data = get_portfolio_data()
+    return render_template('experience.html', data=portfolio_data)
+
+@app.route('/skills')
+def skills():
+    portfolio_data = get_portfolio_data()
+    return render_template('skills.html', data=portfolio_data)
+
+@app.route('/projects')
+def projects():
+    portfolio_data = get_portfolio_data()
+    return render_template('projects.html', data=portfolio_data)
+
+@app.route('/achievements')
+def achievements():
+    portfolio_data = get_portfolio_data()
+    return render_template('achievements.html', data=portfolio_data)
+
+@app.route('/contact')
+def contact():
+    portfolio_data = get_portfolio_data()
+    return render_template('contact.html', data=portfolio_data)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
