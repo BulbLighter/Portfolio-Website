@@ -39,7 +39,7 @@ def get_portfolio_data():
                 'company': 'Globiva Services Pvt. Ltd.',
                 'position': 'Junior Software Engineer(Apprentice)',
                 'period': 'Feb 2026 – May 2026',
-                'location': 'Not specified',
+                'location': 'Onsite',
                 'achievements': [
                     'Onboarded by reviewing full-stack documentation (RBL frontend & backend) and independently mapping component hierarchies, system architecture, and client-server workflows using flowcharts',
                     'Built a small CRUD e-commerce app (React + Node.js + MySQL) to internalize data flow patterns before working on production code',
